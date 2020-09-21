@@ -1,8 +1,8 @@
 <template>
   <d2-container>
-    <template slot="header">网站的头部</template>
+    <template slot="header">简易视频网站</template>
       <div>
-        <legend>简易视频网站</legend>
+        <!-- <legend>简易视频网站</legend> -->
         <!-- <header id="header"></header>
         <nav id="nav"></nav>
         <section id="section"></section>
@@ -16,33 +16,42 @@
             <a href="#">短视频</a>
             <a href="#">游戏视频</a>
             <a href="#">纪录片</a>
-            <a href="#">中央频道</a>
+            <a href="#">科幻片</a>
           </span>
         </div>
         <div id="sec">
           <tr>
-            <td><img src=""></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+            <td>37</td>
+            <td>38</td>
+            <td>39</td>
           </tr>
         </div>
         <div id="footer">
@@ -60,22 +69,23 @@ export default {
 </script>
 <style scoped>
   #header{
-    width: 885.2px;
-    height: 20px;
+    width: 100%;
+    height: 40px;
     background-color:rgb(170, 225, 247);
     text-align: center;
+    font-size: 30px;
   }
   a{
     margin: 20px;
   }
   #sec{
-    width: 883.2px;
+    width: 100%;
     height: 480px;
     border: ridge 1px palevioletred;
   } 
   #footer{
-    width: 885.2px;
-    height: 30px;
+    width: 100%;
+    height: 40px;
     background-color: rgb(170, 225, 247);
   }
   td{

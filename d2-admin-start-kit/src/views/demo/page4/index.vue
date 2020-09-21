@@ -65,17 +65,17 @@ export default {
   data(){
     return{
       persons:[{
-        name:"aaa",
+        name:"张三",
         age:20,
         sex:"男",
         phone:"13831388998"
       },{
-        name:"bbb",
+        name:"李四",
         age:21,
         sex:"女",
         phone:"13831388998"
       },{
-        name:"ccc",
+        name:"王五",
         age:22,
         phone:"13831388998",
         sex:"男",
@@ -86,6 +86,11 @@ export default {
         age:"",
         sex:"",
         phone:""
+      },
+      backgroundDiv:{
+      backgroundimage:"url("+require('../../../assets/img/1.jpg')+")",
+      backgroundRepeat:'no-repeat',
+      backgroundSize:'100% 100%'
       }
     }
   },
@@ -125,6 +130,7 @@ export default {
   .app{
     margin: auto;
     width: 600px;
+    /* background-image:url(); */
   }
   .header{
     width: 597px;
@@ -141,4 +147,5 @@ export default {
   thead{
     background-color: cornflowerblue;
   }
+  
 </style>
