@@ -2,7 +2,7 @@
   <div>
     <h3>在assets文件夹下通过相对路径引入图片</h3>
     <span>
-      <img :src="imgUrl" alt="">  
+      <img :src="imgUrl" alt="" style="width:500px;height:500px">  
     </span>
   </div>
 </template>

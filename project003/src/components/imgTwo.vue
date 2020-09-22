@@ -11,7 +11,7 @@
 export default {
   data(){
     return{
-      imgUrl:'/static/images/1.jpg'
+      imgUrl:'/static/images/2.jpg'
     }
   }
 }
