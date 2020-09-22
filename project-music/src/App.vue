@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <router-link to="/imgOne">assets</router-link>
-    <router-link to="/imgTwo">static</router-link>
-    <router-view></router-view>
-    <!-- <router-view/> -->
+    <img src="./assets/logo.png">
+    <router-view/>
   </div>
 </template>
 
