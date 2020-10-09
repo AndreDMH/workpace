@@ -23,7 +23,7 @@ export const menuHeader = supplementPath([
     children: [
       { path: '/page1', title: '页面 1' },
       { path: '/page2', title: '页面 2' },
-      { path: '/page3', title: '页面 3' },
+      { path: '/page3', title: '用户查询' },
       { path: '/page4', title: '录入系统' },
       { path: '/page5', title: '页面5' }
     ]
@@ -38,7 +38,7 @@ export const menuAside = supplementPath([
     children: [
       { path: '/page1', title: '页面 1' },
       { path: '/page2', title: '页面 2' },
-      { path: '/page3', title: '页面 3' },
+      { path: '/page3', title: '用户查询' },
       { path: '/page4', title: '录入系统' },
       { path: '/page5', title: '页面5' }
     ]

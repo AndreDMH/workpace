@@ -53,7 +53,7 @@
             <button @click="deleteStudentMsg()">删除</button>
           </td>
         </tr>
-      </tbody>
+      </tbody> 
     </table>
     </div>
   </d2-container>
@@ -86,11 +86,6 @@ export default {
         age:"",
         sex:"",
         phone:""
-      },
-      backgroundDiv:{
-      backgroundimage:"url("+require('../../../assets/img/1.jpg')+")",
-      backgroundRepeat:'no-repeat',
-      backgroundSize:'100% 100%'
       }
     }
   },
@@ -126,7 +121,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
   .app{
     margin: auto;
     width: 600px;
@@ -140,12 +135,12 @@ export default {
   }
   table {
     width: 600px;
-    border: solid blueviolet;
-    border-collapse: collapse;
+    border: solid blueviolet 1px ;
     text-align: center;
   }
   thead{
     background-color: cornflowerblue;
   }
+  
   
 </style>
