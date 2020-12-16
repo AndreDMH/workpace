@@ -4,6 +4,8 @@
       <el-page-header content="歌单"></el-page-header>
       <el-container>
         <el-header>
+          <el-form :inline="true" :model="searchMusic">
+            <el-form-item prop="keywords" >
             <el-input 
               prefix-icon="el-icon-search" 
               placeholder="请输入要查询的关键词" 
@@ -11,7 +13,11 @@
               size="mini"
               v-model="searchMusic.keywords">
             </el-input>
-            <el-button size="mini" @click="searchMusicInfo()" >搜索</el-button>
+            </el-form-item>
+            <el-form-item>
+              <el-button size="mini" @click="searchMusicInfo()" >搜索</el-button>
+            </el-form-item>
+          </el-form>
         </el-header>
         <el-container>
           <el-aside width="200px">
@@ -121,7 +127,8 @@
             </el-main>
           </el-container>
         </el-container>
-          <el-footer></el-footer>
+          <el-footer>
+          </el-footer>
       </el-container>
     </div> 
   </d2-container>
@@ -139,13 +146,13 @@ export default {
       },
       //假数据 音乐信息
       music_info:[{
-        number_data:"",
-        title_data:"",
-        singer_data:"",
-        album_data:"",
-        time_data:"",
-        memory_data:""  
-      }]
+        number_data:"1",
+        title_data:"2",
+        singer_data:"3",
+        album_data:"4",
+        time_data:"5",
+        memory_data:"6"  
+      }],
       // 对数组进行定义
       //music_info:[]
     }
@@ -157,23 +164,12 @@ export default {
     async search_info(){
       let parmas={
         keywords: this.searchMusic.keywords,
-        // limit: this.searchMusic.limit,
-        // type: this.searchMusic.type
       };
-      let url = "http://musicapi.leanapp.cn/search";
-      const {data:res} = await this.$http.get(url,parmas);
+      let url = 'http://musicapi.leanapp.cn/search/song/url';
+      const {data:res} = await this.$http.post(url,parmas);
       console.log(res);
 
       this.music_info = res.music_info;
-
-      /* const {data:res} = await this.$http.get(
-        "http://musicapi.leanapp.cn/search",
-        {
-          parmas:{
-            keywords:this.searchMusic.keywords
-          }
-        }
-      ) */
     },
     searchMusicInfo(){
       this.search_info();

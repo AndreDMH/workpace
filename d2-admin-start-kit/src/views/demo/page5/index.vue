@@ -1,70 +1,64 @@
 <template>
   <d2-container>
-    <template slot="header">简易视频网站</template>
-      <div>
-        <!-- <legend>简易视频网站</legend> -->
-        <!-- <header id="header"></header>
-        <nav id="nav"></nav>
-        <section id="section"></section>
-        <footer id="footer"></footer> -->
-
-        <div id="header">
-          <span>
-            <a href="#">电影</a>
-            <a href="#">电视剧</a>
-            <a href="#">动漫</a>
-            <a href="#">短视频</a>
-            <a href="#">游戏视频</a>
-            <a href="#">纪录片</a>
-            <a href="#">科幻片</a>
-          </span>
-        </div>
-        <div id="sec">
-          <tr>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-            <td>16</td>
-            <td>17</td>
-            <td>18</td>
-            <td>19</td>
-          </tr>
-          <tr>
-            <td>21</td>
-            <td>22</td>
-            <td>23</td>
-            <td>24</td>
-            <td>25</td>
-            <td>26</td>
-            <td>27</td>
-            <td>28</td>
-            <td>29</td>
-          </tr>
-          <tr>
-            <td>31</td>
-            <td>32</td>
-            <td>33</td>
-            <td>34</td>
-            <td>35</td>
-            <td>36</td>
-            <td>37</td>
-            <td>38</td>
-            <td>39</td>
-          </tr>
-        </div>
-        <div id="footer">
-          
-        </div>
-      </div>
+    <template slot="header">网站的头部</template>
+      <div id="main" style="height:500px"></div> 
     <template slot="footer">网站的尾部</template>
   </d2-container>
 </template>
 
 <script>
 export default {
-  name: 'page5'
+  name: 'page5',
+  data(){
+    return{
+      msg:"eCharts"
+    }
+  },
+  mounted(){
+    this.drawline()
+  },
+  methods:{
+    drawline(){
+      var echarts = require('echarts');
+    // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
+    // 绘制图表 折线图
+  myChart.setOption({
+    title: {
+        text: 'ECharts'
+    },
+    tooltip: {},
+    xAxis: {
+        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+    },
+    yAxis: {},
+    series: [{
+        name: '销量',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+    },
+    {
+        name: '销量',
+        type: 'line',
+        data: [5, 20, 36, 10, 10, 20]
+    },
+    {
+        name: '销量',
+        type: 'pie',
+        center:['65%',100],
+        radius:65,
+        data: [
+          {name:'衬衫',value:5},
+          {name:'羊毛衫',value:20},
+          {name:'雪纺衫',value:36},
+          {name:'裤子',value:10},
+          {name:'高跟鞋',value:10},
+          {name:'袜子',value:20}
+        ]
+    }]
+});
+    }
+  }
 }
 </script>
 <style scoped>

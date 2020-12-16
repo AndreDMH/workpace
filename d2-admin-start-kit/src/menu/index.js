@@ -25,7 +25,10 @@ export const menuHeader = supplementPath([
       { path: '/page2', title: '页面 2' },
       { path: '/page3', title: '用户查询' },
       { path: '/page4', title: '录入系统' },
-      { path: '/page5', title: '页面5' }
+      { path: '/page5', title: '页面5' },
+      { path: '/page6', title: '泛舟4.0结算配置'},
+      { path: '/page7', title:'泛舟4.0新增广告位（直投）' },
+      { path: '/page8', title:'泛舟4.0新建平台' },
     ]
   }
 ])
@@ -40,7 +43,10 @@ export const menuAside = supplementPath([
       { path: '/page2', title: '页面 2' },
       { path: '/page3', title: '用户查询' },
       { path: '/page4', title: '录入系统' },
-      { path: '/page5', title: '页面5' }
+      { path: '/page5', title: '页面5' },
+      { path: '/page6', title: '泛舟4.0结算配置'},
+      { path: '/page7', title:'泛舟4.0新增广告位（直投）' },
+      { path: '/page8', title:'泛舟4.0新建平台' }
     ]
   }
 ])

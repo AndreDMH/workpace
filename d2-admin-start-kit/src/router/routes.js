@@ -66,6 +66,33 @@ const frameIn = [{
       },
       component:_import('demo/page5')
     },
+    {
+      path:"page6",
+      name:"page6",
+      meta:{
+        title:"泛舟4.0结算配置",
+        auth:true
+      },
+      component:_import('demo/page6')
+    },
+    {
+      path:"page7",
+      name:"page7",
+      meta:{
+        title:"泛舟4.0新增广告位（直投）",
+        auth:true
+      },
+      component:_import('demo/page7')
+    },
+    {
+      path:"page8",
+      name:"page8",
+      meta:{
+        title:"泛舟4.0新建平台",
+        auth:true
+      },
+      component:_import('demo/page8')
+    },
     // 系统 前端日志
     {
       path: 'log',
