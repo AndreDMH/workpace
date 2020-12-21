@@ -45,7 +45,12 @@
           </el-radio-group>
         </el-form-item>
         <el-form-item label="素材个数：" v-if="this.adList.adimage==1" prop="imgNumber">
-          <el-select style="width:240px" placeholder="请选择素材个数"size="small" v-model="adList.imgNumber" @change="changeNum($event)">
+          <el-select 
+            style="width:240px"  
+            placeholder="请选择素材个数"
+            size="small" 
+            v-model="adList.imgNumber" 
+            @change="changeNum($event)">
             <el-option
             v-for="(item,index) in imgNum"
             :key="index"
@@ -55,9 +60,15 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <!-- <div v-for="(item,index) in numImg" :key="index" > -->
-          <el-form-item label="素材：" v-if="this.adList.adimage==1" prop="imageType">
-            <el-select size="small" placeholder="请选择素材类型" style="width:240px" v-model="adList.imageType">
+
+
+
+        <div v-for="(selectItem, selectIndex) in imageNumber" :key="selectIndex" >
+          <el-form-item 
+            :label="'素材'+Number(selectIndex+1)+':'" 
+            v-if="adList.adimage==1" 
+            prop="imageType">
+            <el-select size="small" clearable placeholder="请选择素材类型" style="width:240px" v-model="selectItem.imageType">
               <el-option
                 v-for="(item,index) in imgType"
                 :key="index"
@@ -66,20 +77,32 @@
               ></el-option>
             </el-select>
           </el-form-item>
-          <el-form-item v-if="this.adList.adimage==1" label="名称：" >
-            <el-input placeholder="请输入素材名称" style="width:240px" size="small" />
+          <el-form-item 
+            v-if="adList.adimage==1" 
+            :label="'名称'+Number(selectIndex+1)+':'" 
+            prop="imageName">
+            <el-input placeholder="请输入素材名称" style="width:240px" size="small" v-model="selectItem.imageName"/>
           </el-form-item>
-          <el-form-item v-if="this.adList.adimage==1" label="数字限制：" >
-            <el-input placeholder="请输入数字限制" style="width:240px" size="small" />
+          <el-form-item v-if="adList.adimage==1 && selectItem.imageType==1" label="数字限制：" prop="limitNum">
+            <el-input-number style="width:120px" size="small" v-model="adList.limitNum"></el-input-number>
           </el-form-item>
-          <el-form-item label="是否必传：" v-if="this.adList.adimage==1" prop="is_transport">
+          <el-form-item label="格式要求：" prop="requirements" v-if="adList.adimage==1 && selectItem.imageType==2 "> 
+            <el-checkbox-group v-model="adList.requirements">
+              <el-checkbox label="JPG" name="type"></el-checkbox>
+              <el-checkbox label="PNG" name="type"></el-checkbox>
+              <el-checkbox label="GIF" name="type"></el-checkbox> 
+            </el-checkbox-group>
+            高度：<el-input-number style="width:120px" size="small"></el-input-number>
+            宽度：<el-input-number style="width:120px" size="small"></el-input-number>
+          </el-form-item>
+          <el-form-item label="是否必传：" v-if="adList.adimage==1" prop="is_transport">
             <el-radio-group v-model="adList.is_transport" size="small">
               <el-radio-button :label="0">否</el-radio-button>
               <el-radio-button :label="1">是</el-radio-button>
             </el-radio-group>
           </el-form-item>
-          <div class="lineSytle" v-show="this.adList.adimage==1" ></div>
-        <!-- </div> -->
+          <div class="lineSytle" v-show="adList.adimage==1" ></div>
+        </div>
         <el-form-item label="是否批量：" prop="is_aaaa">
           <el-radio-group v-model="adList.is_aaaa" size="small">
             <el-radio-button :label="0">否</el-radio-button>
@@ -111,6 +134,9 @@ export default {
         imgNumber:"1",
         imageType:"",
         is_transport:0,
+        imageName:"",
+        limitNum:"",
+        requirements:[],
       },
       admedias:[
         {label:'假数据',value:'1'}
@@ -144,16 +170,46 @@ export default {
         {label:'文字',value:'1'},
         {label:'图片',value:'2'}
       ],
-      numImg:[]
+      numImg:[],
+      imageNumber:[
+        {
+        imageType:"",//素材类型
+        imageName:"",//素材名称
+        limitNum:"",//字数限制
+        requirements:"",//格式要求
+        is_transport:""//是否必传
+        }
+      ]
     }
+  },
+  created(){
+    this.getInfo()
   },
   methods:{
     sunmitMedias(){
       console.log('提交')
     },
+    cancelMedias(){
+      console.log('取消')
+    },
     changeNum(num){
       console.log('个数选择:',num)
       let numList = num;
+      this.imageNumber = [];
+      for(let i = 0;i<num;i++){
+        this.imageNumber.push({
+          imageType:"",//素材类型
+        imageName:"",//素材名称
+        limitNum:"",//字数限制
+        requirements:"",//格式要求
+        is_transport:""//是否必传
+        })
+      }
+    },
+
+
+
+    getInfo(){
       this.imgNum.forEach((item,index)=>{
         this.numImg.push({
           label:item.label,
@@ -161,11 +217,7 @@ export default {
         })
       })
       console.log('打印数据:',this.numImg)
-
     },
-    cancelMedias(){
-      console.log('取消')
-    }
   }  
 }
 
