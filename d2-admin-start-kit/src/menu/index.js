@@ -29,6 +29,7 @@ export const menuHeader = supplementPath([
       { path: '/page6', title: '泛舟4.0结算配置'},
       { path: '/page7', title:'泛舟4.0新增广告位（直投）' },
       { path: '/page8', title:'泛舟4.0新建平台' },
+      { path: '/page9', title:'泛舟4.0高级筛选'}
     ]
   }
 ])
@@ -46,7 +47,9 @@ export const menuAside = supplementPath([
       { path: '/page5', title: '页面5' },
       { path: '/page6', title: '泛舟4.0结算配置'},
       { path: '/page7', title:'泛舟4.0新增广告位（直投）' },
-      { path: '/page8', title:'泛舟4.0新建平台' }
+      { path: '/page8', title:'泛舟4.0新建平台' },
+      { path: '/page9', title:'泛舟4.0高级筛选' },
+      
     ]
   }
 ])

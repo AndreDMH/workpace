@@ -93,6 +93,15 @@ const frameIn = [{
       },
       component:_import('demo/page8')
     },
+    {
+      path:"page9",
+      name:"page9",
+      meta:{
+        title:"泛舟4.0高级筛选",
+        auth:true
+      },
+      component:_import('demo/page9')
+    },
     // 系统 前端日志
     {
       path: 'log',
