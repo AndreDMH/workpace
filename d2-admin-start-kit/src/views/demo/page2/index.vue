@@ -13,7 +13,6 @@
                     :key="b"
                     :label="a.label"
                     :value="a.value"
-                   
                   ></el-option>
                 </el-select>
               </el-form-item>
@@ -24,8 +23,8 @@
                   <el-option
                    v-for="(c,d) in provinceArr[index]"
                    :key="d"
-                   :label="c"
-                   :value="c"
+                   :label="c.label"
+                   :value="c.value"
                   ></el-option>
                 </el-select>
               </el-form-item>
@@ -87,6 +86,7 @@ export default {
         }
       ],//国家数组
       provinceArr:[],//省份数组
+      middleArr:[],
       cityArr:[],//城市数组
       townArr:[],//县城数组
       cProvince:[
@@ -158,13 +158,13 @@ export default {
       console.log('index',index)
       // console.log('b',b)
       if(str == 1){
-
         this.provinceArr[index] = this.cProvince
       } else if(str == 2){
         this.provinceArr[index] = this.aProvince
       } else if(str == 3){
         this.provinceArr[index] = this.jProvince
       }
+      console.log('查看数据类型',this.provinceArr)
     }
   }  
 }
