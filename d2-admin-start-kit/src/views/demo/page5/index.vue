@@ -54,7 +54,7 @@ export default {
               { name: "雪纺衫", value: 36 },
               { name: "裤子", value: 10 },
               { name: "高跟鞋", value: 10 },
-              { name: "袜子", value: 20 },
+              { name: "袜子", value: 20 }, 
             ],
           },
         ],
