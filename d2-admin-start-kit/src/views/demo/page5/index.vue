@@ -23,7 +23,7 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(document.getElementById("main"));
       // 绘制图表 折线图
-      myChart.setOption({
+      myChart.setOption({ 
         title: {
           text: "ECharts",
         },
