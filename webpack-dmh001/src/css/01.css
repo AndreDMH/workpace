@@ -1,0 +1,14 @@
+li{
+  list-style: none;
+}
+::placeholder{
+  color: blueviolet;
+  /* 由于::选择器存在兼容性问题，应该在头部加上浏览器类型来兼容这个问题 可以通过配置postCSS自动添加css的兼容前缀 */
+}
+
+#box{
+  width: 180px;
+  height: 170px;
+  background-color: palevioletred;
+  background: url(../image/20.jpg);
+}
