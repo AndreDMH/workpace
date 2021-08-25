@@ -1,4 +1,5 @@
 const path = require('path');
+const VueLoaderPlugin  = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const htmlPlugin = new HtmlWebpackPlugin({//创建插件的实例对象
     template:'./src/index.html',//指定要用到的模板文件
@@ -19,14 +20,18 @@ module.exports = {
     path:path.join(__dirname, './dist'),
     filename:'bundle.js',
   },
-  plugins:[htmlPlugin], //plugins 数组是webpack打包期间会用到的一些插件列表
+  plugins:[
+    htmlPlugin,
+    new VueLoaderPlugin()
+  ], //plugins 数组是webpack打包期间会用到的一些插件列表  new VueLoaderPlugin()请确保引入这个插件
   module:{
     rules:[
       {test:/\.css$/,use:['style-loader','css-loader','postcss-loader']}, //这里的loader顺序是固定的，必须先打包style-loader然后在打包css-loader loader的调用顺序是从后往前调，也就是说先调用css-loader,其次是style-loader
       {test:/\.less$/,use:['style-loader','css-loader','less-loader']},
       {test:/\.scss$/,use:['style-loader','css-loader','sass-loader']},
-      {test:/\.png|jpg|gif|bmp|svg|ttf|eot|woff|woff2$/,use:['url-loader?limit=10000']},
-      {test:/\.js$/,use:'babel-loader',exclude:/node_modules/}
+      // {test:/\.png|jpg|gif|bmp|svg|ttf|eot|woff|woff2$/,use:['url-loader?limit=10000']},
+      {test:/\.js$/,use:'babel-loader',exclude:/node_modules/},
+      {test:/\.vue$/,use:'vue-loader'}
     ]
   }
 }
