@@ -1,0 +1,75 @@
+// element 样式补丁
+.el-card {
+    &.is-always-shadow {
+        box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);
+    }
+    &.is-hover-shadow {
+        &:hover {
+            box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);
+        }
+    }
+}
+
+// table {
+//     overflow: hidden !important;
+// }
+// body .el-table th.gutter {
+//     display: table-cell!important;
+// }
+.el-table--border th.gutter:last-of-type {
+    display: block!important;
+    width: 17px!important;
+}
+
+body .el-table colgroup.gutter {
+    display: table-cell!important;
+}
+
+.el-table th>.cell {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    line-height: 36px;
+}
+
+// body .el-table colgroup.gutter:last-of-type {
+//     display: table-cell!important;
+// }
+.el-table .warning-row {
+    background: oldlace;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.el-table .success-row {
+    background: #f0f9eb;
+}
+
+.el-menu--horizontal {
+    border-bottom: none !important;
+}
+
+.el-tabs__item:focus.is-active.is-focus:not(:active) {
+    box-shadow: none !important;
+}
+
+.el-table__body td,
+.el-table__body td span {
+    font-size: 13px;
+}
+
+.el-table td,
+.el-table th {
+    padding: 5px 0;
+}
+
+.el-form-item__content {
+    font-size: 13px !important
+}
